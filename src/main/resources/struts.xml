@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+
+	<constant name="struts.custom.i18n.resources" value="global" />
+ 	<constant name="struts.devMode" value="true" />
+	
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="">		
+			
+			<result name="success">pages/loginPage.jsp</result>
+		</action>
+		
+		<action name="login" class="com.ust.login.action.AuthenticateAction">
+		
+		<result name="success" >pages/itemsPage.jsp</result>
+		<result name="error" >pages/errorPage.jsp</result>			
+		</action>	
+				
+		<action name="peronalinfo" class="com.ust.login.action.UserListing">
+		
+		<result name="success" >pages/UserPersonalinfo.jsp</result>
+		
+		</action>
+			
+		<action name="userlogin" class="com.ust.login.action.UserLoginAction">		
+			
+			<result name="userSuccess" ></result>
+		</action>	
+		
+		<action name="bidding" class="com.ust.login.action.UserBiddingAction">		
+		<result name="success" >pages/userbiddetailsPage.jsp</result>
+		
+		</action>
+		
+	</package>
+	
+</struts>
